@@ -26,8 +26,6 @@ class Service
         $http_response = \Requests::post(self::API_ENDPOINT, $headers, $post_data);
         $gradwell_response = new Response($http_response->body);
 
-        var_dump($gradwell_response);
-
         return $http_response->success && $gradwell_response->isSuccessful();
     }
 
