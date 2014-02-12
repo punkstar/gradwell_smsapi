@@ -41,7 +41,7 @@ class Service
             'message'     => $message->getMessage()
         );
 
-        $http_response = \Requests::post(self::API_ENDPOINT, $headers, $post_data);
+        $http_response = $this->sendPostRequest(self::API_ENDPOINT, $headers, $post_data);
         $gradwell_response = new Response($http_response->body);
 
         return $http_response->success && $gradwell_response->isSuccessful();
@@ -65,5 +65,17 @@ class Service
                 throw new \Exception("Expected a Message object");
             }
         }
+    }
+
+    /**
+     * @param $url
+     * @param $headers
+     * @param $post_data
+     *
+     * @return \Requests_Response
+     */
+    protected function sendPostRequest($url, $headers, $post_data)
+    {
+        return \Requests::post($url, $headers, $post_data);
     }
 }
