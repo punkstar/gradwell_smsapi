@@ -1,0 +1,31 @@
+{
+    "name": "punkstar/gradwell_smsapi",
+    "description": "A PHP library for sending text messages with the Gradwell SMS API",
+    "keywords": ["gradwell", "sms"],
+    "homepage": "https://github.com/punkstar/gradwell_smsapi",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nick Jones",
+            "email": "nick@nicksays.co.uk",
+            "homepage": "http://www.nicksays.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/punkstar/gradwell_smsapi/issues",
+        "wiki": "https://github.com/punkstar/gradwell_smsapi/wiki",
+        "source": "https://github.com/punkstar/gradwell_smsapi"
+    },
+    "require": {
+        "rmccue/requests": ">=1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Gradwell" : "src/"
+        }
+    }
+}
