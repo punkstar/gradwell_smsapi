@@ -55,14 +55,14 @@ class Service
     public function sendBulk($messages)
     {
         if (!is_array($messages)) {
-            throw new \Exception("Expected an array of TextMessage objects");
+            throw new \Exception("Expected an array of Message objects");
         }
 
         foreach ($messages as $message) {
             if ($message instanceof Message) {
                 $this->send($message);
             } else {
-                throw new \Exception("Expected a TextMessage object");
+                throw new \Exception("Expected a Message object");
             }
         }
     }
