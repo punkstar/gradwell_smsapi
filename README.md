@@ -8,7 +8,7 @@ Unofficial library to send SMS messages using the Gradwell API.
 
     {
         "require": {
-            "punkstar/gradwell_smsapi": "*"
+            "punkstar/gradwell_smsapi": "dev-master"
         }
     }
 
