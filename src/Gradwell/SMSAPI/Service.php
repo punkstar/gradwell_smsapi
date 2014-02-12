@@ -2,17 +2,35 @@
 
 namespace Gradwell\SMSAPI;
 
+/**
+ * Class Service
+ *
+ * Interface for communicating with the Gradwell API.
+ *
+ * @package Gradwell\SMSAPI
+ */
 class Service
 {
     const API_ENDPOINT = 'https://call-api.gradwell.com/0.9.3/sms';
 
+    /**
+     * @var string
+     */
     protected $auth_token;
 
+    /**
+     * @param string $auth_token
+     */
     public function __construct($auth_token)
     {
         $this->auth_token = $auth_token;
     }
 
+    /**
+     * @param Message $message
+     *
+     * @return bool
+     */
     public function send(Message $message)
     {
         $headers = array();
@@ -29,6 +47,11 @@ class Service
         return $http_response->success && $gradwell_response->isSuccessful();
     }
 
+    /**
+     * @param $messages
+     *
+     * @throws \Exception
+     */
     public function sendBulk($messages)
     {
         if (!is_array($messages)) {
